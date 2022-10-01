@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --trans: all 0.4s linear;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Bungee Spice", cursive;
+}
+
+.main_div {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(37, 72%, 94%);
+  display: grid;
+  place-items: center;
+}
+
+.center_div {
+  width: 480px;
+  height: 350px;
+  position: relative;
+  box-shadow: 2.5px 2.5px 3px rgba(0, 0, 0, 0.3),
+    -2px -2px 3px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.center_div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--trans);
+}
+
+.center_div .captions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: var(--trans);
+}
+
+.captions h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin-top: 40rem;
+  transition: var(--trans);
+}
+
+.captions p {
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+.center_div:hover img {
+  transform: scale(1.2) rotate(9deg);
+}
+
+.center_div:hover .captions {
+  opacity: 1;
+}
+
+.center_div:hover .captions h1 {
+  margin-top: 0;
+}
+
+@media (max-width: 500px) {
+  .center_div {
+    width: 90%;
+  }
+
+  html {
+    font-size: 55%;
+  }
+}
